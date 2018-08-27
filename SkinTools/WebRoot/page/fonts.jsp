@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java"
+	import="com.cpl.constants.NetworkConstants"
+	contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.io.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -28,7 +30,12 @@
 </style>
 </head>
 <body>
-  	<% String skinName = request.getParameter("skin_name"); 
+  	<% 
+  		Object nameObj = request.getSession().getAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN);
+  		String skinName = nameObj != null ? (String) nameObj : "";
+  		if (null == skinName || "".equals(skinName)) {
+			response.sendRedirect("/SkinTools/start");
+  		}
   		System.out.println("2222the skin : " +skinName);
   	%>
   	<h2>当前皮肤为 : <%=skinName %></h2>

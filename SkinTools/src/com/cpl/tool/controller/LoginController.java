@@ -28,12 +28,12 @@ public class LoginController {
 	@Resource
 	HttpServletResponse mResponse;
 	
-	@RequestMapping("guide")
-	public ModelAndView toLoginPage() {
-		System.out.println("in here !!!!");
-		ModelAndView modelAndView = new ModelAndView("guide");
-		return modelAndView;
-	}
+//	@RequestMapping("guide")
+//	public ModelAndView toLoginPage() {
+//		System.out.println("in here !!!!");
+//		ModelAndView modelAndView = new ModelAndView("guide");
+//		return modelAndView;
+//	}
 //	
 	@RequestMapping("login")
 	public ModelAndView doLogin() {
