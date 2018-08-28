@@ -27,20 +27,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		Object nameObj = request.getSession().getAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN);
   		String skinName = nameObj != null ? (String) nameObj : "";
   		if (null == skinName || "".equals(skinName)) {
+  			System.out.println("skin is null");
 			response.sendRedirect("start");
-  		}
-  		System.out.println("the skin : " +skinName);
+  		} 
   	%>
-	<%
-		boolean showClose = (boolean)request.getAttribute(NetworkConstants.PARAMS_KEY_NOTI_CLOSE_LAST_SKIN);         // 获取错误属性
-			if(showClose) {
-	%>
-		<script type="text/javascript" language="javascript">
-			alert("请先结束当前皮肤的编辑，点击结束编辑按钮即可"); // 弹出错误信息
-		</script>
-	<%
-		}
-	%>
+  	
+  	<% 
+  		Object needNotifyObj = request.getAttribute(NetworkConstants.PARAMS_KEY_NOTI_CLOSE_LAST_SKIN);
+  		System.out.println("needNotifyObj : " + needNotifyObj);
+  		if (needNotifyObj != null && ((boolean)(needNotifyObj))) {
+ 				System.out.println("need notify close last");
+ 	%>
+	 	<script type="text/javascript" language="javascript">
+			alert("请先结束之前"+"的编辑 !")
+		</script>	
+ 			
+ 	<% 
+  		}
+  	%>
+			
 	<h2>当前皮肤为 : <%=skinName %></h2>
     <p><a href="page/fonts.jsp">替换iconfont和字体</a>
     <p><a href="fonts/backgrounds.jsp">替换各种背景</a>

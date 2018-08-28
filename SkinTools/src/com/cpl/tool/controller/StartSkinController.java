@@ -1,7 +1,10 @@
 package com.cpl.tool.controller;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -17,39 +20,39 @@ public class StartSkinController {
 	HttpServletRequest mRequest;
 	
 	@Resource
+	HttpServletResponse mResponse;
+	
+	@Resource
 	StartSkinService mService;
 	
 	@RequestMapping("start")
 	public ModelAndView indexGuide() {
 		HttpSession session = mRequest.getSession();
 		String curSkinName = (String)session.getAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN);
-		if (curSkinName == null || "".equals(curSkinName)) {
-			return new ModelAndView("guide");
+		return new ModelAndView("guide");
 
-		} else {
-			return new ModelAndView("mainpage");
-		}
+//		if (curSkinName == null || "".equals(curSkinName)) {
+//			return new ModelAndView("guide");
+//		} else {
+//			return new ModelAndView("mainpage");
+//		}
 	}
 
 	@RequestMapping("startskin")
 	public ModelAndView startBuildSkin() {
+		HttpSession session = mRequest.getSession();
+		Object nameObj = session.getAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN);
+		if (nameObj != null && !nameObj.equals("")) {
+			return new ModelAndView("mainpage", NetworkConstants.PARAMS_KEY_NOTI_CLOSE_LAST_SKIN, true);
+		}
+		
 		String skinName = mRequest.getParameter("skin_name");
 		if (skinName == null || "".equals(skinName.trim())) {
 			return new ModelAndView("guide", "error", "invalidate skin name");
 		}
-		HttpSession session = mRequest.getSession();
-		Object nameObj = session.getAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN);
-		if (nameObj != null && !nameObj.equals("")) {
-			ModelAndView res = new ModelAndView();
-			res.addObject(NetworkConstants.PARAMS_KEY_NOTI_CLOSE_LAST_SKIN, true);
-			res.setViewName("mainpage");
-			return res;
-		}
-		
 		session.setAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN, skinName);
 		mService.startSkin(skinName);
 		ModelAndView res = new ModelAndView();
-		res.addObject(NetworkConstants.PARAMS_KEY_NOTI_CLOSE_LAST_SKIN, false);
 		res.setViewName("mainpage");
 		return res;
 	}
