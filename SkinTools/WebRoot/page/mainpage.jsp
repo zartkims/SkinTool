@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	%>
 			
 	<h2>当前皮肤为 : <%=skinName %></h2>
-    <p><a href="page/fonts.jsp">替换iconfont和字体</a>
+    <p><a href="page/keyDetail.jsp">替换iconfont和字体</a>
     <p><a href="fonts/backgrounds.jsp">替换各种背景</a>
     <p><a href="fonts/foregrounds.jsp">替换各种前景</a>
     <p><a href="fonts/colors.jsp">配置色系</a>
