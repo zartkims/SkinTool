@@ -1,3 +1,4 @@
+<%@page import="com.cpl.constants.NetworkConstants"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -27,10 +28,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<br>
 	<form name="upload" action="/SkinTools/uploadfiles" method="post"
 		enctype="multipart/form-data">
-		
-		<h1>XX按键</h1>
+		<% 
+			String keyName = (String)request.getAttribute(NetworkConstants.PARAMS_KEY_SECTION_NAME);
+			if ("".equals(keyName)) return;//go back
+			
+		%>
+		<h1><%=keyName %> 按键</h1>
 		<h3>1080</h3>
-		<p>普通状态<input type="file" name="1080"> 
+		<p>普通状态<input type="file" name="1080"> 当前使用文件为:
 		<p>按下状态<input type="file" name="1080"> 
 		<p>不可点状态(非必须)<input type="file" name="1080"> 
 		
@@ -45,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p>按下状态<input type="file" name="480"> 
 		<p>不可点状态(非必须)<input type="file" name="480">
 		
-		<p><input type="submit"	value="upload" />
+		<p><input type="submit"	value="保存" />
 	</form>
 </body>
 </html>

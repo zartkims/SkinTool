@@ -67,64 +67,64 @@ public class SkinFolders {
 		SKIN_1080_IMAGE = SKIN_1080_DIR + "/image";
 	}
 
-	public static String getSKIN_ROOT_DIR(String skinName) {
+	public static String get_SKIN_ROOT_DIR(String skinName) {
 		return ALL_SKIN_ROOT + "/" + skinName;
 	}
 
-	public static String getSKIN_ROOT_RES_DIR(String skinName) {
-		return getSKIN_ROOT_DIR(skinName) + "/res";
+	public static String get_SKIN_ROOT_RES_DIR(String skinName) {
+		return get_SKIN_ROOT_DIR(skinName) + "/res";
 	}
 
-	public static String getSKIN_ROOT_COLORS(String skinName) {
-		return getSKIN_ROOT_DIR(skinName) + "/colors.ini";
+	public static String get_SKIN_ROOT_COLORS(String skinName) {
+		return get_SKIN_ROOT_DIR(skinName) + "/colors.ini";
 	}
 
-	public static String getSKIN_ROOT_PREVIEW(String skinName) {
-		return getSKIN_ROOT_DIR(skinName) + "/preview.png";
+	public static String get_SKIN_ROOT_PREVIEW(String skinName) {
+		return get_SKIN_ROOT_DIR(skinName) + "/preview.png";
 	}
 
-	public static String getSKIN_ROOT_SKIN_INI(String skinName) {
-		return getSKIN_ROOT_DIR(skinName) + "/skin.ini";
+	public static String get_SKIN_ROOT_SKIN_INI(String skinName) {
+		return get_SKIN_ROOT_DIR(skinName) + "/skin.ini";
 	}
 
-	public static String getSKIN_ROOT_CONFIG(String skinName) {
-		return getSKIN_ROOT_DIR(skinName) + "/config";
+	public static String get_SKIN_ROOT_CONFIG(String skinName) {
+		return get_SKIN_ROOT_DIR(skinName) + "/config";
 	}
 
-	public static String getSKIN_480_DIR(String skinName) {
-		return getSKIN_ROOT_DIR(skinName) + "/480";
+	public static String get_SKIN_480_DIR(String skinName) {
+		return get_SKIN_ROOT_DIR(skinName) + "/480";
 	}
 
-	public static String getSKIN_720_DIR(String skinName) {
-		return getSKIN_ROOT_DIR(skinName) + "/720";
+	public static String get_SKIN_720_DIR(String skinName) {
+		return get_SKIN_ROOT_DIR(skinName) + "/720";
 	}
 
-	public static String getSKIN_1080_DIR(String skinName) {
-		return getSKIN_ROOT_DIR(skinName) + "/1080";
+	public static String get_SKIN_1080_DIR(String skinName) {
+		return get_SKIN_ROOT_DIR(skinName) + "/1080";
 	}
 
-	public static String getSKIN_480_RES_DIR(String skinName) {
-		return getSKIN_480_DIR(skinName) + "/res";
+	public static String get_SKIN_480_RES_DIR(String skinName) {
+		return get_SKIN_480_DIR(skinName) + "/res";
 	}
 
-	public static String getSKIN_480_IMAGE(String skinName) {
-		return getSKIN_480_DIR(skinName) + "/image";
+	public static String get_SKIN_480_IMAGE(String skinName) {
+		return get_SKIN_480_DIR(skinName) + "/image";
 	}
 
-	public static String getSKIN_720_RES_DIR(String skinName) {
-		return getSKIN_720_DIR(skinName) + "/res";
+	public static String get_SKIN_720_RES_DIR(String skinName) {
+		return get_SKIN_720_DIR(skinName) + "/res";
 	}
 
-	public static String getSKIN_720_IMAGE(String skinName) {
-		return getSKIN_720_DIR(skinName) + "/image";
+	public static String get_SKIN_720_IMAGE(String skinName) {
+		return get_SKIN_720_DIR(skinName) + "/image";
 	}
 
-	public static String getSKIN_1080_RES_DIR(String skinName) {
-		return getSKIN_1080_DIR(skinName) + "/res";
+	public static String get_SKIN_1080_RES_DIR(String skinName) {
+		return get_SKIN_1080_DIR(skinName) + "/res";
 	}
 
-	public static String getSKIN_1080_IMAGE(String skinName) {
-		return getSKIN_1080_DIR(skinName) + "/image";
+	public static String get_SKIN_1080_IMAGE(String skinName) {
+		return get_SKIN_1080_DIR(skinName) + "/image";
 	}
 	
 	
