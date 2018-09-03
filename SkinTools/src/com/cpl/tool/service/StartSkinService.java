@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
-import com.cpl.constants.INIFile;
+import com.cpl.bean.INIFile;
 import com.cpl.constants.NetworkConstants;
 import com.cpl.tool.manager.SkinFolders;
 
@@ -19,7 +19,6 @@ public class StartSkinService {
 
 	public INIFile readSkinINI(String skinName, HttpSession session) {
 		INIFile skinINI = new INIFile(SkinFolders.get_SKIN_ROOT_SKIN_INI(skinName));
-//		String iniFileName = SkinFolders.get_SKIN_ROOT_SKIN_INI(skinName);
 		//假装从文件读了
 		return skinINI;
 		

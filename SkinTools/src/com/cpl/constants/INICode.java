@@ -190,4 +190,18 @@ public class INICode {
     public static final String ANIMATION_ORI_DEGREE = "ORI_DEGREE";
     public static final String ANIMATION_FIN_DEGREE = "FIN_DEGREE";
 
+    
+    public static final String SECTION_IMG_PRE = "IMG_";
+    
+    public static final String SECTION_KEY = "KEY";
+    public static final String SECTION_FUNC_KEY = "FUNC_KEY";
+    public static final String SECTION_SPACE_KEY = "SPACE_KEY";
+    public static final String SECTION_ENTER_KEY = "ENTER_KEY";
+    public static final String SECTION_BACK_SAPCE_KEY = "BACK_SPACE_KEY";
+    public static final String SECTION_SHIFT_KEY = "BACK_SHIFT_KEY";
+    public static final String SECTION_123_KEY = "BACK_123_KEY";
+    public static final String SECTION_EMOJI_KEY = "BACK_EMOJI_KEY";
+    public static final String SECTION_PERIOD_KEY = "BACK_PERIOD_KEY";
+    public static final String SECTION_DOT_KEY = "BACK_DOT_KEY";
+
 }

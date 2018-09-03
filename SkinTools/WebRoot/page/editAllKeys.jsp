@@ -1,3 +1,4 @@
+<%@page import="com.cpl.constants.INICode"%>
 <%@ page language="java" import="java.util.*" import="com.cpl.constants.NetworkConstants" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -45,14 +46,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  	<% 
   		}
   	%>
-			
-	<h2>当前皮肤为 : <%=skinName %></h2>
-    <p><a href="page/editAllKeys.jsp">替换iconfont和字体</a>
-    <p><a href="fonts/backgrounds.jsp">替换各种背景</a>
-    <p><a href="fonts/foregrounds.jsp">替换各种前景</a>
-    <p><a href="fonts/colors.jsp">配置色系</a>
-    <tr height="100">
-    	<p> <a href="finishEdit">结束 <%=skinName %> 编辑</a>
+	 <tr height="100">
+    	<p> <a href="page/mainpage.jsp">返回主页面</a>
     </tr>
+    
+	<h2>当前皮肤为 : <%=skinName %></h2>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY%>">替换 字母 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_FUNC_KEY%>">替换 功能 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_SPACE_KEY%>">替换 空格 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_ENTER_KEY%>">替换 回车 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_BACK_SAPCE_KEY%>">替换 删除 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_SHIFT_KEY%>">替换 shift 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_123_KEY%>">替换 ？123 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_PERIOD_KEY%>">替换 逗号 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_DOT_KEY%>">替换 句号 按键背景</a>
+    
+   
   </body>
 </html>
