@@ -192,16 +192,24 @@ public class INICode {
 
     
     public static final String SECTION_IMG_PRE = "IMG_";
-    
+    //todo cpl! fix the section
     public static final String SECTION_KEY = "KEY";
     public static final String SECTION_FUNC_KEY = "FUNC_KEY";
-    public static final String SECTION_SPACE_KEY = "SPACE_KEY";
-    public static final String SECTION_ENTER_KEY = "ENTER_KEY";
-    public static final String SECTION_BACK_SAPCE_KEY = "BACK_SPACE_KEY";
-    public static final String SECTION_SHIFT_KEY = "BACK_SHIFT_KEY";
-    public static final String SECTION_123_KEY = "BACK_123_KEY";
-    public static final String SECTION_EMOJI_KEY = "BACK_EMOJI_KEY";
+    public static final String SECTION_SPACE_KEY = "KEY_FUNC_SPACE";
+    public static final String SECTION_ENTER_KEY = "KEY_FUNC_ENTER";
+    public static final String SECTION_BACK_SAPCE_KEY = "KEY_FUNC_DEL";
+    public static final String SECTION_SHIFT_KEY = "KEY_FUNC_SHIFT";
+    public static final String SECTION_FUHAO_KEY = "KEY_FUNC_DIGIT";
+    public static final String SECTION_DIGIT_KEY = "KEY_FUNC_SYMBOL";
+    public static final String SECTION_EMOJI_KEY = "KEY_FUNC_EMOJI";
+    public static final String SECTION_BG_SYMBOL_AREA = "BG_SYMBOL_AREA";
+    
     public static final String SECTION_PERIOD_KEY = "BACK_PERIOD_KEY";
     public static final String SECTION_DOT_KEY = "BACK_DOT_KEY";
+    //
+    public static final String SECTION_TEXT_DEF_SINGLE_STYLE = "TEXT_DEF_SINGLE_STYLE";
+    public static final String SECTION_TEXT_DEF_DOUBLE_STYLE = "TEXT_DEF_DOUBLE_STYLE";
+    public static final String SECTION_KB_BG = "KB_BG";
+    public static final String SECTION_BG_CANDS = "BG_CANDS";
 
 }

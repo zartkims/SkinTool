@@ -57,7 +57,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_ENTER_KEY%>">替换 回车 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_BACK_SAPCE_KEY%>">替换 删除 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_SHIFT_KEY%>">替换 shift 按键背景</a>
-    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_123_KEY%>">替换 ？123 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_FUHAO_KEY%>">替换 ？123 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_DIGIT_KEY%>">替换 1234 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_PERIOD_KEY%>">替换 逗号 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_DOT_KEY%>">替换 句号 按键背景</a>
     

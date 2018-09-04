@@ -62,9 +62,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//session.getAttribute(sessionKey) == null ? new INIFile(path) : (INIFile) session.getAttribute(sessionKey);
 		%>
 		
-		<form name="upload" action="/SkinTools/uploadfiles?keySectionName=<%=keyName %>" method="post"
+		<form name="upload" action="/SkinTools/uploadkeybgs?keySectionName=<%=keyName %>" method="post"
 			enctype="multipart/form-data">
-		<p><input type="submit"	value="保存" height="300" />
+		<p><input type="submit"	value="保存并返回" height="300" />
 		<h1><%=keyName %> 按键</h1>
 		<h3>1080</h3>
 		<p>普通状态<input type="file" name="1080"> 之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.N)%>
@@ -82,6 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p>按下状态<input type="file" name="480"> 之前使用文件为:<%=img480INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.P)%>
 		<p>不可点状态(非必须)<input type="file" name="480">之前使用文件为:<%=img480INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.D)%>
 		
+		<p><input type="submit"	value="保存并返回" height="300" />
 		
 	</form>
 </body>

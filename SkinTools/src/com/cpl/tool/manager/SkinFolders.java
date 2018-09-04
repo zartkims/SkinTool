@@ -39,6 +39,7 @@ public class SkinFolders {
 	private static void createAllDir(String skinName) {
 		invalidatePath(skinName);
 		FileUtils.createDir(ALL_SKIN_ROOT);
+		FileUtils.createDir(SKIN_ROOT_RES_DIR);
 		FileUtils.createDir(SKIN_480_DIR);
 		FileUtils.createDir(SKIN_720_DIR);
 		FileUtils.createDir(SKIN_1080_DIR);

@@ -52,8 +52,8 @@ public class StartSkinController {
 		}
 		session.setAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN, skinName);
 		mService.startSkin(skinName);
-		mService.readSkinINI(skinName, session);
-		mService.readImageINI(skinName, session);
+//		mService.readSkinINI(skinName, session);
+		mService.iniINI(skinName, session);
 		ModelAndView res = new ModelAndView();
 		res.setViewName("mainpage");
 		return res;

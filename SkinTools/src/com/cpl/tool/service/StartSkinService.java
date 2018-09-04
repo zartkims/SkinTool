@@ -17,14 +17,14 @@ public class StartSkinService {
 		System.out.println("create skin dirs");
 	}
 
-	public INIFile readSkinINI(String skinName, HttpSession session) {
-		INIFile skinINI = new INIFile(SkinFolders.get_SKIN_ROOT_SKIN_INI(skinName));
-		//假装从文件读了
-		return skinINI;
-		
-	}
+//	public INIFile readSkinINI(String skinName, HttpSession session) {
+//		INIFile skinINI = new INIFile(SkinFolders.get_SKIN_ROOT_SKIN_INI(skinName));
+//		//假装从文件读了
+//		return skinINI;
+//		
+//	}
 
-	public void readImageINI(String skinName, HttpSession session) {
+	public void iniINI(String skinName, HttpSession session) {
 		
 		String image1080 = SkinFolders.get_SKIN_1080_IMAGE(skinName);
 		String image720 = SkinFolders.get_SKIN_720_IMAGE(skinName);
@@ -32,9 +32,14 @@ public class StartSkinService {
 		INIFile img1080INI = new INIFile(image1080);
 		INIFile img720INI = new INIFile(image720);
 		INIFile img480INI = new INIFile(image480);
-		//假装从文件读了
+		//
+		INIFile skinINI = new INIFile(SkinFolders.get_SKIN_ROOT_SKIN_INI(skinName));
+		INIFile colorINI = new INIFile(SkinFolders.get_SKIN_ROOT_COLORS(skinName));
+		//
 		session.setAttribute(NetworkConstants.SESSION_1080_IMAGE, img1080INI);
 		session.setAttribute(NetworkConstants.SESSION_720_IMAGE, img720INI);
 		session.setAttribute(NetworkConstants.SESSION_480_IMAGE, img480INI);
+		session.setAttribute(NetworkConstants.SESSION_SKIN_INI, skinINI);
+		session.setAttribute(NetworkConstants.SESSION_COLORS_INI, colorINI);
 	}
 }
