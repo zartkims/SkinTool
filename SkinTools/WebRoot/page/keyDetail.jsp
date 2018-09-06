@@ -63,27 +63,92 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		%>
 		
 		<form name="upload" action="/SkinTools/uploadkeybgs?keySectionName=<%=keyName %>" method="post"
-			enctype="multipart/form-data">
-		<p><input type="submit"	value="保存并返回" height="300" />
+			enctype="multipart/form-data" onsubmit="return setTheScale()">
+		<p><input type="button" onclick="setTheScale()"	value="保存并返回" height="300" />
 		<h1><%=keyName %> 按键</h1>
+		<p>ps：如果是需要拉伸的.9图则需要配置拉伸区域，拉伸区域配置格式为 [左,右,上,下] 例如 10,20,0,30
 		<h3>1080</h3>
-		<p>普通状态<input type="file" name="1080"> 之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.N)%>
-		<p>按下状态<input type="file" name="1080"> 之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.P)%>
-		<p>不可点状态(非必须)<input type="file" name="1080"> 之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.D)%>
+		<p>普通状态<input type="file" name="1080">  
+		拉伸区域：<input type="text" id="N1080" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))"> 
+		之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.N)%>
+		<p>按下状态<input type="file" name="1080">
+		拉伸区域：<input type="text" id="<%=NetworkConstants.PARAMS_P_1080 %>" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))"> 
+		 之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.P)%>
+		<p>不可点状态(非必须)<input type="file" name="1080"> 
+		拉伸区域：<input type="text" id="<%=NetworkConstants.PARAMS_D_1080 %>" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))"> 
+		之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.D)%>
 		
 		<h3>720</h3>
-		<p>普通状态<input type="file" name="720"> 之前使用文件为:<%=img720INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.N)%>
-		<p>按下状态<input type="file" name="720"> 之前使用文件为:<%=img720INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.P)%>
-		<p>不可点状态(非必须)<input type="file" name="720">之前使用文件为:<%=img720INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.D)%>
+		<p>普通状态<input type="file" name="720"> 
+		拉伸区域：<input type="text" id="<%=NetworkConstants.PARAMS_N_720 %>" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))">
+		之前使用文件为:<%=img720INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.N)%>
+		<p>按下状态<input type="file" name="720"> 
+		拉伸区域：<input type="text" id="<%=NetworkConstants.PARAMS_P_720 %>" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))">
+		之前使用文件为:<%=img720INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.P)%>
+		<p>不可点状态(非必须)<input type="file" name="720">
+		拉伸区域：<input type="text" id="<%=NetworkConstants.PARAMS_D_720 %>" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))">
+		之前使用文件为:<%=img720INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.D)%>
 		 
 				
 		<h3>480</h3>
-		<p>普通状态<input type="file" name="480"> 之前使用文件为:<%=img480INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.N)%>
-		<p>按下状态<input type="file" name="480"> 之前使用文件为:<%=img480INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.P)%>
-		<p>不可点状态(非必须)<input type="file" name="480">之前使用文件为:<%=img480INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.D)%>
+		<p>普通状态<input type="file" name="480"> 
+		拉伸区域：<input type="text" id="<%=NetworkConstants.PARAMS_N_480 %>" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))">
+		之前使用文件为:<%=img480INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.N)%>
+		<p>按下状态<input type="file" name="480"> 
+		拉伸区域：<input type="text" id="<%=NetworkConstants.PARAMS_P_480 %>" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))">
+		之前使用文件为:<%=img480INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.P)%>
+		<p>不可点状态(非必须)<input type="file" name="480">
+		拉伸区域：<input type="text" id="<%=NetworkConstants.PARAMS_D_480 %>" onkeyup="value=value.replace(/[^,\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^,\d]/g,''))">
+		之前使用文件为:<%=img480INI.getStringProperty(INICode.SECTION_IMG_PRE + keyName, INICode.D)%>
+		
 		
 		<p><input type="submit"	value="保存并返回" height="300" />
 		
+		
+		
+		
 	</form>
+	
+	<script type="text/javascript">
+	 	function setTheScale() {
+	 <%-- 		<%
+	 			String name = (String) request.getSession().getAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN);
+				System.out.println("in here !!! name~~ : " + name);
+				if (name != null && "".equals(name)) {
+					%>
+					alert("请先结束之前"+name+"的编辑 !")
+	 				return false;
+					<%
+				}
+			%> --%>
+	 		var N1080 = document.getElementById("N1080").value;
+	 		var P1080 = document.getElementById("P1080").value;
+	 		var D1080 = document.getElementById("D1080").value;
+	 		
+	 		var N720 = document.getElementById("N720").value;
+	 		var P720 = document.getElementById("P720").value;
+	 		var D720 = document.getElementById("D720").value;
+	 		
+	 		var N480 = document.getElementById("N480").value;
+	 		var P480 = document.getElementById("P480").value;
+	 		var D480 = document.getElementById("D480").value;
+	 		
+	 		
+	 		var action = "/SkinTools/uploadkeybgs?keySectionName=<%=keyName %>";
+	 		action += "&N1080=" + N1080;
+	 		action += "&P1080=" + P1080;
+	 		action += "&D1080=" + D1080;
+	 		action += "&N720=" + N720;
+	 		action += "&P720=" + P720;
+	 		action += "&D720=" + D720;
+	 		action += "&N480=" + N480;
+	 		action += "&P480=" + P480;
+	 		action += "&D480=" + D480;
+	 		
+	 		document.upload.action=action;      
+   			document.upload.submit();	
+	 		return false;
+	 	}
+  	</script>
 </body>
 </html>

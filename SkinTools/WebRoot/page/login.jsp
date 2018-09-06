@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is my JSP page. <br>
-    <form action="login" method="post">
+    <form action="login?abc=fuck" method="post">
     	<p>username : <input name="username" type="text">
     	<p>password : <input name="password" type="password">
     	<p> <input type="submit">

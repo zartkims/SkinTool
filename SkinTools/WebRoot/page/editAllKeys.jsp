@@ -53,14 +53,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<h2>当前皮肤为 : <%=skinName %></h2>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY%>">替换 字母 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_FUNC_KEY%>">替换 功能 按键背景</a>
+    
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_BG_KEY_POPUP%>">替换 按键弹泡背景</a>
+    
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_SPACE_KEY%>">替换 空格 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_ENTER_KEY%>">替换 回车 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_BACK_SAPCE_KEY%>">替换 删除 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_SHIFT_KEY%>">替换 shift 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_FUHAO_KEY%>">替换 ？123 按键背景</a>
     <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_DIGIT_KEY%>">替换 1234 按键背景</a>
-    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_PERIOD_KEY%>">替换 逗号 按键背景</a>
-    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_DOT_KEY%>">替换 句号 按键背景</a>
+    
+ <%--    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_SYM_1%>">替换 逗号 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_SYM_2%>">替换 句号 按键背景</a> --%>
+    
+    <P>编辑面板
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_SELECT_ALL%>">替换 全选 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_CUT%>">替换 复制 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_COPY%>">替换 粘贴 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_DELETE%>">替换 删除 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_SELECT%>">替换 Select 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_LEFT%>">替换 向左 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_RIGHT%>">替换 向右 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_TOP%>">替换 向上 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_BOTTOM%>">替换 向下 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_START%>">替换 最左 按键背景</a>
+    <p><a href="page/keyDetail.jsp?keySectionName=<%=INICode.SECTION_KEY_EDIT_END%>">替换 最后 按键背景</a>
     
    
   </body>

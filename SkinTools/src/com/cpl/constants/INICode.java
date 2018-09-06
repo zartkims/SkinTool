@@ -6,6 +6,8 @@ public class INICode {
 	public static final String P = "P";
 	public static final String D = "D";
 	
+	public static final String NINE_PATCH_SUFFIX = "_9_Patch";
+	
 	 /**
      * 空格键左右箭头特殊处理，因为空格键本身携带的信息不够，不好强加
      */
@@ -203,13 +205,29 @@ public class INICode {
     public static final String SECTION_DIGIT_KEY = "KEY_FUNC_SYMBOL";
     public static final String SECTION_EMOJI_KEY = "KEY_FUNC_EMOJI";
     public static final String SECTION_BG_SYMBOL_AREA = "BG_SYMBOL_AREA";
-    
-    public static final String SECTION_PERIOD_KEY = "BACK_PERIOD_KEY";
-    public static final String SECTION_DOT_KEY = "BACK_DOT_KEY";
+    //
+    public static final String SECTION_KEY_SYM_1 = "KEY_SYM_1";
+    public static final String SECTION_KEY_SYM_2 = "KEY_SYM_2";
     //
     public static final String SECTION_TEXT_DEF_SINGLE_STYLE = "TEXT_DEF_SINGLE_STYLE";
     public static final String SECTION_TEXT_DEF_DOUBLE_STYLE = "TEXT_DEF_DOUBLE_STYLE";
     public static final String SECTION_KB_BG = "KB_BG";
     public static final String SECTION_BG_CANDS = "BG_CANDS";
+    public static final String SECTION_BG_KEY_POPUP = "BG_KEY_POPUP";
+    //
+    public static final String SECTION_KEY_EDIT_SELECT_ALL = "KEY_EDIT_SELECT_ALL";
+    public static final String SECTION_KEY_EDIT_CUT = "KEY_EDIT_CUT";
+    public static final String SECTION_KEY_EDIT_COPY = "KEY_EDIT_COPY";
+    public static final String SECTION_KEY_EDIT_PASTE = "KEY_EDIT_PASTE";
+    public static final String SECTION_KEY_EDIT_DELETE = "KEY_EDIT_DELETE";
+    public static final String SECTION_KEY_EDIT_SELECT = "KEY_EDIT_SELECT";
+    public static final String SECTION_KEY_EDIT_LEFT = "KEY_EDIT_LEFT";
+    public static final String SECTION_KEY_EDIT_RIGHT = "KEY_EDIT_RIGHT";
+    public static final String SECTION_KEY_EDIT_TOP = "KEY_EDIT_TOP";
+    public static final String SECTION_KEY_EDIT_BOTTOM = "KEY_EDIT_BOTTOM";
+    public static final String SECTION_KEY_EDIT_START = "KEY_EDIT_START";
+    public static final String SECTION_KEY_EDIT_END = "KEY_EDIT_END";
+    //
+    
 
 }
