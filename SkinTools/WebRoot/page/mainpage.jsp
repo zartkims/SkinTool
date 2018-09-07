@@ -50,10 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <p><a href="page/editAllKeys.jsp">替换 按键 背景</a>
     <p><a href="page/background.jsp">替换 键盘候选 背景</a>
     <p><a href="page/iconfontEdit.jsp">替换字体和iconfont</a>
-    
-    <p><a href="fonts/foregrounds.jsp">替换各种前景</a>
-    
-    <p><a href="fonts/colors.jsp">配置色系</a>
+    <p><a href="page/colors.jsp">配置色系</a>
     <tr height="100">
     	<p> <a href="finishEdit">结束 <%=skinName %> 编辑</a>
     </tr>

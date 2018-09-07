@@ -1,7 +1,9 @@
 <%@page import="com.cpl.bean.INIFile.INIProperty"%>
 <%@page import="com.cpl.constants.INICode"%>
 <%@page import="com.cpl.constants.NetworkConstants"%>
-<%@ page language="java" import="java.util.*" 
+<%@ page language="java" 
+	import="java.util.*" 
+	import="java.io.*" 
 	import="com.cpl.bean.*" 
 	import="com.cpl.tool.manager.*" 
 	pageEncoding="UTF-8"%>
@@ -40,7 +42,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			System.out.println("skinName : " + skinName);
 			
 			INIFile img1080INI = (INIFile)session.getAttribute(NetworkConstants.SESSION_1080_IMAGE);
-	
+			
+			String preview = SkinFolders.get_SKIN_ROOT_PREVIEW(skinName);
+			File file = new File(preview);
+			boolean isHasPreview = file.exists();
+			String prePreview = isHasPreview ? "已经有一个预览图了" : "目前没有任何预览图请务必上传一个";
 		%>
 		
 		<form name="upload" action="/SkinTools/uploadKbBg" method="post"
@@ -49,6 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<h3>背景</h3>
 		<p>键盘背景<input type="file" name="keyboardBg"> 之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_KB_BG, INICode.IMAGE)%>
 		<p>候选背景<input type="file" name="candBg"> 之前使用文件为:<%=img1080INI.getStringProperty(INICode.SECTION_BG_CANDS, INICode.IMAGE)%>
+		<p>预览图背景<input type="file" name="previewBg"> <%=prePreview%>
 		
 		
 	</form>

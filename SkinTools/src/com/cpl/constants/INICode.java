@@ -6,7 +6,8 @@ public class INICode {
 	public static final String P = "P";
 	public static final String D = "D";
 	
-	public static final String NINE_PATCH_SUFFIX = "_9_Patch";
+	public static final String NINE_PATCH_SUFFIX = "_9_patch";
+	public static final String MSP_SUFFIX = ".msp";
 	
 	 /**
      * 空格键左右箭头特殊处理，因为空格键本身携带的信息不够，不好强加

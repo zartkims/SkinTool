@@ -7,7 +7,7 @@ import com.cpl.utils.FileUtils;
 public class SkinFolders {
 //	private static String skinName;
 	
-	private static final String ALL_SKIN_ROOT = "allSkins";
+	public static final String ALL_SKIN_ROOT = "allSkins";
 	private static String SKIN_ROOT_DIR = ALL_SKIN_ROOT + "/curSkin";
 
 	
@@ -21,11 +21,11 @@ public class SkinFolders {
 	private static String SKIN_720_DIR = SKIN_ROOT_DIR + "/720";
 	private static String SKIN_1080_DIR = SKIN_ROOT_DIR + "/1080";
 	private static String SKIN_480_RES_DIR = SKIN_480_DIR + "/res";
-	private static String SKIN_480_IMAGE = SKIN_480_DIR + "/image";
+	private static String SKIN_480_IMAGE = SKIN_480_DIR + "/image.ini";
 	private static String SKIN_720_RES_DIR = SKIN_720_DIR + "/res";
-	private static String SKIN_720_IMAGE = SKIN_720_DIR + "/image";
+	private static String SKIN_720_IMAGE = SKIN_720_DIR + "/image.ini";
 	private static String SKIN_1080_RES_DIR = SKIN_1080_DIR + "/res";
-	private static String SKIN_1080_IMAGE = SKIN_1080_DIR + "/image";
+	private static String SKIN_1080_IMAGE = SKIN_1080_DIR + "/image.ini";
 
 	private SkinFolders() {
 	}
@@ -109,7 +109,7 @@ public class SkinFolders {
 	}
 
 	public static String get_SKIN_480_IMAGE(String skinName) {
-		return get_SKIN_480_DIR(skinName) + "/image";
+		return get_SKIN_480_DIR(skinName) + "/image.ini";
 	}
 
 	public static String get_SKIN_720_RES_DIR(String skinName) {
@@ -117,7 +117,7 @@ public class SkinFolders {
 	}
 
 	public static String get_SKIN_720_IMAGE(String skinName) {
-		return get_SKIN_720_DIR(skinName) + "/image";
+		return get_SKIN_720_DIR(skinName) + "/image.ini";
 	}
 
 	public static String get_SKIN_1080_RES_DIR(String skinName) {
@@ -125,7 +125,7 @@ public class SkinFolders {
 	}
 
 	public static String get_SKIN_1080_IMAGE(String skinName) {
-		return get_SKIN_1080_DIR(skinName) + "/image";
+		return get_SKIN_1080_DIR(skinName) + "/image.ini";
 	}
 	
 	

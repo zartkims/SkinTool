@@ -49,7 +49,10 @@
 			for (int i = 0; i < list.length; ++i) {
 				
 				System.out.println(list[i].getAbsolutePath());
-				out.print("<p>" + list[i].getName());
+				//out.print("<p>" + list[i].getName());
+				%>
+					<p><%=list[i].getName() %> <a href="/SkinTools/downloadSkinOutside?skinName=<%=list[i].getName() %>">下载</a>
+				<%
 			}
 		}
 	%>
