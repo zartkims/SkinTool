@@ -17,7 +17,7 @@ import com.cpl.utils.FileUtils;
 @Service
 public class KbBgService {
 
-	public void save(MultipartFile kbBG, MultipartFile candsBG, HttpServletRequest mRequest) {
+	public void save(MultipartFile kbBG, MultipartFile candsBG, MultipartFile previewPng, HttpServletRequest mRequest) {
 		HttpSession session = mRequest.getSession();
 		String skinName = (String) session.getAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN);
 		INIFile img1080INI = getINI(session, NetworkConstants.SESSION_1080_IMAGE, SkinFolders.get_SKIN_1080_IMAGE(skinName));
@@ -32,6 +32,20 @@ public class KbBgService {
 		saveFile(kbBG, candsBG, rooResDir, img720INI);
 		saveFile(kbBG, candsBG, rooResDir, img480INI);
 		
+		savePreviewFile(previewPng, skinName);
+	}
+	
+	private void savePreviewFile(MultipartFile previewPng, String skinName) {
+		try {
+			if (previewPng != null) {
+				String fileName = previewPng.getOriginalFilename();
+				if (fileName.endsWith(".png")) {
+					String previewPngPath = SkinFolders.get_SKIN_ROOT_PREVIEW(skinName);
+					FileUtils.deleteFile(new File(previewPngPath));
+					previewPng.transferTo(new File(previewPngPath));
+				}
+			}
+		} catch (Exception e) {}
 	}
 	
 	private void saveFile(MultipartFile kbBG, MultipartFile candsBG, String resDir, INIFile imgINI) {

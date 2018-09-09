@@ -7,10 +7,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,46 +39,47 @@ public class UploadController {
 	@Resource
 	ColorsService mColorService;
 	
-	@RequestMapping("/downloadSkinInner")
-	public ResponseEntity<byte[]> downloadSkinInner() {
+	@RequestMapping("/uploadkeybgs")
+	public ModelAndView recieveKeyBgFile(@RequestParam("1080") MultipartFile[] imgs1080,
+			@RequestParam("720") MultipartFile[] imgs720,
+			@RequestParam("480") MultipartFile[] imgs480) {
 		//TODO cpl! move this to service 
-		System.out.println("go download");
-		
-		HttpSession session = mRequest.getSession();
-		String skinName = (String) session.getAttribute(NetworkConstants.SESSION_KEY_CUR_SKIN);
-		
-		return downLoadSkinMSP(skinName); 
-	}
-
-	@RequestMapping("/downloadSkinOutside")
-	public ResponseEntity<byte[]> downloadSkinOutside() {
-		String skinName = mRequest.getParameter("skinName");
-		System.out.println("go here down load : " + skinName);
-		return downLoadSkinMSP(skinName); 
+		System.out.println("go save keys");
+		mKeyService.save(imgs1080, imgs720, imgs480, mRequest);
+		Object ini = mRequest.getSession().getAttribute(NetworkConstants.SESSION_1080_IMAGE);
+		System.out.println("finish save and the ini 1080 is : " + ini);
+		return new ModelAndView("editAllKeys"); 
 	}
 	
-	private ResponseEntity<byte[]> downLoadSkinMSP(String skinName) {
-		String curSkinRoot = SkinFolders.get_SKIN_ROOT_DIR(skinName);
-		File file = new File(curSkinRoot);
-		if (file.exists()) {
-			//to zip file 
-			File targetZipFile = new File(SkinFolders.ALL_SKIN_ROOT,  file.getName() + INICode.MSP_SUFFIX);
-			FileUtils.deleteFile(targetZipFile);
-			FileUtils.zipFile(file.getPath(), targetZipFile.getPath());
-			
-			HttpHeaders headers = new HttpHeaders();
-			headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);    
-	        headers.setContentDispositionFormData("attachment", file.getName() + INICode.MSP_SUFFIX);
-	        
-			try {
-				ResponseEntity<byte[]> rsp = new ResponseEntity<byte[]>(org.apache.commons.io.FileUtils.readFileToByteArray(targetZipFile),
-						headers, HttpStatus.CREATED);
-				return rsp;
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return null;
+	@RequestMapping("/uploadFonts")
+	public ModelAndView recieveUploadFont(@RequestParam("normalFont") MultipartFile normalFont) {
+		//TODO cpl! move this to service 
+		System.out.println("go save font");
+		mFontService.save(normalFont, mRequest);
+		System.out.println("finish save normalFont  ");
+		return new ModelAndView("mainpage"); 
 	}
+	
+	
+	@RequestMapping("/uploadKbBg")
+	public ModelAndView recieveUploadBg(@RequestParam("keyboardBg") MultipartFile kbBG, 
+			@RequestParam("candBg") MultipartFile candsBG,
+			@RequestParam("previewBg") MultipartFile previewPng) {
+		//TODO cpl! move this to service 
+		System.out.println("go save bg");
+		mKbService.save(kbBG, candsBG, previewPng, mRequest);
+		System.out.println("finish save bg  ");
+		return new ModelAndView("mainpage"); 
+	}
+	
+	@RequestMapping("/colors")
+	public ModelAndView recieveColors() {
+		//TODO cpl! move this to service 
+		System.out.println("go save bg");
+		mColorService.save(mRequest);
+		System.out.println("finish save colors  ");
+		return new ModelAndView("mainpage"); 
+	}
+	
+	
 }
